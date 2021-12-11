@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import dev.weazyexe.unsplsh.ui.theme.UnsplshTheme
 
@@ -29,7 +30,11 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    device = Devices.PIXEL_3A,
+    showSystemUi = true
+)
 @Composable
 fun DefaultPreview() {
     UnsplshTheme {
