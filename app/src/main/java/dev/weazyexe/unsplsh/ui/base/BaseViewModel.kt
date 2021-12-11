@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 abstract class BaseViewModel<S : BaseState, E : BaseEffect> : ViewModel() {
 
     private val _state by lazy { MutableStateFlow(initialState) }
-    protected val uiState: StateFlow<S>
+    val uiState: StateFlow<S>
         get() = _state.asStateFlow()
     protected val state: S
         get() = _state.value

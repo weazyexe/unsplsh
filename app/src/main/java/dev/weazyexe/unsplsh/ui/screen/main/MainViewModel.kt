@@ -1,21 +1,17 @@
 package dev.weazyexe.unsplsh.ui.screen.main
 
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.weazyexe.unsplsh.data.network.photos.PhotosRepository
 import dev.weazyexe.unsplsh.ui.base.BaseViewModel
 import dev.weazyexe.unsplsh.ui.base.LoadState
 import kotlinx.coroutines.launch
-import java.lang.Exception
-import javax.inject.Inject
 
 /**
  * [MainScreen]'s view model
  */
-@HiltViewModel
-class MainViewModel @Inject constructor(
-    private val photosRepository: PhotosRepository
-) : BaseViewModel<MainState, MainEffect>() {
+class MainViewModel : BaseViewModel<MainState, MainEffect>() {
+
+    private val photosRepository = PhotosRepository()
 
     override val initialState = MainState()
 
